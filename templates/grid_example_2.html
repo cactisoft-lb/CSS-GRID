@@ -1,0 +1,96 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>index 2</title>
+    <style>
+      .wrapper {
+        display: grid;
+        /* this is will split the layout into 4 fructions 25% 25% 25% 25% */
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        /* this is will split the layout into 3 fructions 33% 33% 33%  */
+        grid-template-columns: 1fr 1fr 1fr;
+        /* this is will split the layout into 3 fructions 25% 50% 25%  */
+        grid-template-columns: 1fr 2fr 1fr;
+
+        /* short hand , what if we want to make it easier , so in place of of 
+        writing 3 or 4 times ( fr ) we can do this :  */
+
+        grid-template-columns: repeat(3, 1fr);
+        /* this is means repeat it 3 times */
+
+        /* what if we want the combination of 1fr 2fr to be repeated several times */
+        /* grid-template-columns: repeat(3, 1fr 2fr); */
+        grid-gap: 1em;
+
+        /* sometimes we need to fix heights , so there won't be box bigger than another */
+        grid-auto-rows: 100px;
+        /* all our rows becomes 100px */
+        /* but this is not flexible => if we put data with bigger size than 100px 
+        then they will be spread outside our box */
+        grid-auto-rows: minmax(100px, auto);
+        /* it has a min of 100px but it will strech when it comes above */
+
+        /* its recommended to use fr over % , pixels , or any other units  */
+      }
+
+      .nested {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1em;
+        grid-auto-rows: minmax(100px, auto);
+      }
+
+      .wrapper > div {
+        background-color: #e6e6e6;
+        padding: 1em;
+      }
+      .wrapper > div:nth-child(odd) {
+        background-color: #a6a6a6;
+      }
+
+      .nested > div {
+        border: black 1px solid;
+        padding: 1em;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div>Lorem ipsum dolor sit amet.</div>
+      <div>Maxime aperiam molestias quidem possimus.</div>
+      <div>Quos ut minus dolor quae!</div>
+      <div>Praesentium voluptatem sit aperiam vitae?</div>
+      <div>Quia obcaecati provident ut quidem.</div>
+      <div>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, culpa!
+        Eos possimus, necessitatibus deserunt perspiciatis odio cumque illo
+        explicabo sapiente! Aperiam animi commodi quos dolorem perspiciatis
+        excepturi sit, iste accusamus? Delectus cupiditate laboriosam autem
+        aliquid fugit quibusdam voluptatem voluptatum tenetur! Veniam velit
+        doloremque cupiditate tempora, quae suscipit alias neque in. Molestias
+        nihil optio vero. Quisquam nemo cupiditate rerum consequatur ut. In,
+        maiores molestiae. Officiis excepturi consectetur ex impedit laborum
+        doloribus.
+      </div>
+      <div>
+        <div class="nested">
+          <div>Lorem.</div>
+          <div>Lorem.</div>
+          <div>Lorem.</div>
+          <div>Lorem.</div>
+          <div>Lorem.</div>
+          <div>Lorem.</div>
+          <div>Lorem.</div>
+          <div>Lorem.</div>
+          <div>Lorem.</div>
+          <div>Lorem.</div>
+          <div>Lorem.</div>
+          <div>Lorem.</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

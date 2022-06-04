@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: sans-serif;
+      background-color: #575757;
+    }
+
+    .navbar {
+      align-items: center;
+
+      background-color: rgb(162, 78, 240);
+      overflow: hidden;
+      padding: 25px;
+    }
+    .navbar .container {
+      display: grid;
+      grid-template-columns: 6fr 3fr 2fr;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar .logo {
+      width: 100px;
+      height: 25px;
+    }
+
+    .navbar-menu {
+      list-style: none;
+      display: flex;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .navbar ul li a {
+      padding: 1.6rem;
+      font: 16px;
+    }
+
+    /*Responsive NavBar*/
+
+    /* Checkbox Hack*/
+    
+    .navbar input[type=checkbox]{
+        display: none;
+    }
+
+    #checkbox-toggle{
+        display: none;
+    }
+
+    .hamburger{
+       display: none;
+       font-size: 24px;
+       user-select: none;
+    }
+
+    @media (max-width:768px)
+    {
+        .navbar-menu{
+            display: none;
+            background-color:  rgb(85, 19, 146);
+            position:absolute;
+            top: 80px;
+            right: 0;
+            left: 0; 
+            text-align: right;
+            padding: 16px 0;
+            height: 100%;
+            opacity: 0.8;
+            
+        }
+
+        .navbar .logo{
+            display: block;
+        }
+
+        .navbar-menu li:hover{
+            display: block;
+        }
+
+        .navbar-menu li{
+          margin-top:12px;
+          font-size: 20px;
+        }
+        .navbar-menu li:hover{
+          
+            /* background-color:rgb(102, 14, 185); */
+            /* padding: 30px; */
+            opacity: 1;
+            
+            transform: 0.3s ease;
+          
+        }
+
+        .navbar input[type=checkbox]:checked ~ .navbar-menu{
+        display: block;
+        text-align: right;
+        }
+
+        .hamburger{
+            display: block;
+            /* position: absolute; */
+            padding-left: 90%;
+            
+
+        }
+        
+    }
+
+  </style>
+  <body>
+    <div class="wrapper">
+      <!-- Navigation bar   -->
+      <nav class="navbar">
+        <!-- Navigation bar's Container -->
+        <div class="container">
+          <div><img src="./imgs/logo_white.svg" alt="logo" class="logo" /></div>
+
+          <input type="checkbox" name="" id="checkbox-toggle" />
+          <label for="checkbox-toggle" class="hamburger">&#9776</label>
+          <!-- Navigation Menu -->
+          <ul class="navbar-menu">
+            <li><a href="index.html" class="selected">Home</a></li>
+            <li><a href="about.html">About </a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="mystory.html">MyStory</a></li>
+            <li><a href="dreams.html">Dreams</a></li>
+          </ul>
+        </div>
+
+        
+        <div class="wrapper">
+            
+          <!-- PUT YOUR CODE HERE -->
+
+        </div>
+      </nav>
+      <main></main>
+      <footer></footer>
+    </div>
+  </body>
+</html>

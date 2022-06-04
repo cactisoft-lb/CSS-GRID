@@ -1,0 +1,316 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <title>index 4</title>
+    <style>
+
+      /* Navigation Style */
+
+      * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: sans-serif;
+      background-color: #575757;
+    }
+
+    .navbar {
+      align-items: center;
+
+      background-color: rgb(162, 78, 240);
+      overflow: hidden;
+      padding: 25px;
+    }
+    .navbar .container {
+      display: grid;
+      grid-template-columns: 6fr 3fr ;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar .logo {
+      width: 100px;
+      height: 25px;
+    }
+
+
+    .navbar-menu {
+      list-style: none;
+      display: flex;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .navbar ul li a {
+      padding: 1.6rem;
+      font: 16px;
+    }
+
+
+    .navbar input[type=checkbox]{
+        display: none;
+    }
+
+    #checkbox-toggle{
+        display: none;
+    }
+
+    .hamburger{
+       display: none;
+       font-size: 24px;
+       user-select: none;
+    }
+
+    @media (max-width:768px)
+    {
+        .navbar-menu{
+            display: none;
+            background-color:  rgb(85, 19, 146);
+            position:absolute;
+            top: 80px;
+            right: 0;
+            left: 0; 
+            text-align: center;
+            padding: 16px 10px;
+            height: 100%;
+            opacity: 0.8;
+            
+        }
+
+        .navbar .logo{
+            display: block;
+        }
+
+        .navbar-menu li:hover{
+            display: block;
+        }
+
+        .navbar-menu li{
+          margin-top:12px;
+          font-size: 20px;
+        }
+        .navbar-menu li:hover{
+          
+            /* background-color:rgb(102, 14, 185); */
+            /* padding: 30px; */
+            opacity: 1;
+            
+            transform: 0.3s ease;
+          
+        }
+
+        .navbar input[type=checkbox]:checked ~ .navbar-menu{
+        display: block;
+        text-align: right;
+        }
+
+        .hamburger{
+            display: block;
+            /* position: absolute; */
+            padding-left: 90%;
+            
+
+        }
+        
+    }
+     /* ************* END NAV BAR STYLING ***************** */
+    
+      .wrapper {
+        display: grid;
+        /* grid-template-columns: 1fr 1fr 1fr; */
+        grid-template-areas: "box1 box2 box3" 
+                             "box4 box5 box6"
+                             "box7 box8 box9";
+        grid-auto-rows: minmax(300px, auto);
+      }
+
+      .wrapper > div {
+        background-color: #e6e6e6;
+        padding: 1em;
+      }
+      .wrapper > div:nth-child(odd) {
+        background-color: #a6a6a6;
+      }
+
+      .box {
+        grid-area: box;
+        text-align: justify;
+        color: #424141;
+        font-family: "Roboto", sans-serif;
+      }
+
+      .box > p {
+        font-family: "Quicksand", sans-serif;
+      }
+      .box > a {
+        text-decoration: none;
+        color: #525151;
+      }
+      .box1 {
+        grid-area: box1;
+        background-image: url("imgs/girl-g33c218a61_1920.jpg");
+        background-size: cover;
+      }
+      .box2{
+        grid-area: box2;
+      }
+      .box2 > a:hover {
+        color: #ff4dff;
+      }
+      .box3 {
+        grid-area: box3;
+        background-image: url("imgs/music-player-g1b626a521_1920.jpg");
+        background-size: cover;
+      }
+      .box4{
+        grid-area: box4;
+      }
+      .box4 > a:hover {
+        color: rgb(231, 160, 18);
+      }
+      .box5 {
+        grid-area: box5;
+        background-image: url("imgs/music-g51b4d25bf_1920.png");
+        background-size: cover;
+      }
+      .box6{
+        grid-area: box6;
+      }
+      .box6 > a:hover {
+        color: rgb(102, 102, 237);
+      }
+      .box7 {
+        grid-area: box7;
+        background-image: url("imgs/musical-background-g54e4cc08e_1920.jpg");
+        background-size: cover;
+      }
+      .box8{
+        grid-area: box8;
+      }
+      .box8 > a:hover {
+        color: rgb(232, 102, 102);
+      }
+      .box9 {
+        grid-area: box9;
+        background-image: url("imgs/music-gc0cdcb7c4_1920.jpg");
+        background-size: cover;
+      }
+
+      @media only screen and (max-width:550px){
+
+        .wrapper{
+            grid-template-columns: 1fr;
+          grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+          grid-template-areas:
+            "box1"
+            "box2"
+            "box3"
+            "box4"
+            "box5"
+            "box6"
+            "box7"
+            "box8"
+            "box9";
+            
+        }
+        }
+
+      
+
+      
+    </style>
+  </head>
+  <body>
+    <!-- Navigation bar   -->
+    <nav class="navbar">
+      <!-- Navigation bar's Container -->
+      <div class="container">
+        <div><img src="./imgs/logo_white.svg" alt="logo" class="logo" /></div>
+
+        <input type="checkbox" name="" id="checkbox-toggle" />
+        <label for="checkbox-toggle" class="hamburger">&#9776</label>
+        <!-- Navigation Menu -->
+        <ul class="navbar-menu">
+          <li><a href="#" class="selected">Home</a></li>
+          <li><a href="#">About </a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="wrapper">     
+      <div class="box box1"></div>
+      <div class="box box2">
+        <h1>Lorem ipsum dolor sit amet.</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam,
+          doloribus? Repudiandae optio eligendi deserunt est autem corrupti
+          rerum libero tempore. Harum provident numquam minima error itaque
+          beatae tempore quis possimus. Illo quisquam, nostrum nulla mollitia
+          quis eius hic rerum id. Atque fugiat necessitatibus aliquam
+          reprehenderit perferendis obcaecati, aperiam accusamus ducimus?
+        </p>
+        <a href="#">Read more</a>
+      </div>
+      <div class="box box3"></div>
+      <div class="box box4">
+        <h1>Lorem ipsum dolor sit amet.</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam,
+          doloribus? Repudiandae optio eligendi deserunt est autem corrupti
+          rerum libero tempore. Harum provident numquam minima error itaque
+          beatae tempore quis possimus. Illo quisquam, nostrum nulla mollitia
+          quis eius hic rerum id. Atque fugiat necessitatibus aliquam
+          reprehenderit perferendis obcaecati, aperiam accusamus ducimus?
+        </p>
+        <a href="#">Read more</a>
+      </div>
+      <div class="box box5"></div>
+      <div class="box box6">
+        <h1>Lorem ipsum dolor sit amet.</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam,
+          doloribus? Repudiandae optio eligendi deserunt est autem corrupti
+          rerum libero tempore. Harum provident numquam minima error itaque
+          beatae tempore quis possimus. Illo quisquam, nostrum nulla mollitia
+          quis eius hic rerum id. Atque fugiat necessitatibus aliquam
+          reprehenderit perferendis obcaecati, aperiam accusamus ducimus?
+        </p>
+        <a href="#">Read more</a>
+      </div>
+      <div class="box box7"></div>
+      <div class="box box8">
+        <h1>Lorem ipsum dolor sit amet.</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam,
+          doloribus? Repudiandae optio eligendi deserunt est autem corrupti
+          rerum libero tempore. Harum provident numquam minima error itaque
+          beatae tempore quis possimus. Illo quisquam, nostrum nulla mollitia
+          quis eius hic rerum id. Atque fugiat necessitatibus aliquam
+          reprehenderit perferendis obcaecati, aperiam accusamus ducimus?
+        </p>
+        <a href="#">Read more</a>
+      </div>
+      <div class="box box9"></div>
+    </div>
+  </body>
+</html>

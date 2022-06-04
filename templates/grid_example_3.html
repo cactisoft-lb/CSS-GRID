@@ -1,0 +1,120 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>index 3</title>
+    <style>
+      .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-auto-rows: minmax(100px, auto);
+        grid-gap: 1em;
+
+        /* this is will align the item at the right places inside the column */
+        justify-items: start;
+        /* we can use center , end , start , default : stretch */
+        justify-items: stretch;
+
+        /* this is will align our items inside our wrapper division */
+        align-items: center;
+        /* we can use center , end , start , default : stretch */
+        align-items: stretch;
+      }
+
+      .wrapper > div {
+        background-color: #e6e6e6;
+        padding: 1em;
+      }
+      .wrapper > div:nth-child(odd) {
+        background-color: #a6a6a6;
+      }
+
+      /* align self will give us the abilty to align each item inside its container */
+      .box1 {
+        /* align-self: start; */
+
+        /*this means that the box will spread from col1 to col3*/
+        grid-column: 1/3;
+        /*this means that the box will spread from row1 to row3*/
+        grid-row: 1/3;
+        background-color: #ffb3b3 !important;
+      }
+
+      .box2 {
+        /* align-self: end; */
+        grid-column: 1/3;
+        grid-row: 3;
+
+        background-color: #ffb3ec !important;
+      }
+
+      .box3 {
+        /* align-self: center; */
+        grid-column: 3;
+        grid-row: 1/4;
+        /* grid-row: 2/3; */
+        background-image: url("imgs/girl-g33c218a61_1920.jpg");
+        background-color: #b3ffb3 !important;
+
+        background-size: cover;
+      }
+
+      .box4 {
+        /* align-self: stretch; */
+        /* justify-self: end; */
+        grid-column: 1/4;
+        grid-row: 4;
+        background-color: #cceeff !important;
+      }
+
+      .box5 {
+        grid-column: 1/4;
+        grid-row: 5/8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="box box1">
+        box1 <br />
+        column 1 to 3 <br />
+        row 1 to 3
+      </div>
+      <div class="box box2">
+        box2 <br />
+        colum 1 to 3
+      </div>
+      <div class="box box3">
+        box3 <br />
+        colum 3 <br />
+        row 1 to 3
+      </div>
+      <div class="box box4">
+        box4 <br />
+        column 1 to 4 <br />
+        row 4
+      </div>
+      <div class="box box5">
+        box5 <br />
+        column 1 to 4 <br />
+        row 5 to 8
+      </div>
+      <div class="box box6">
+        box6 <br />
+        column 1 <br />
+        row 9
+      </div>
+      <div class="box box7">
+        box7 <br />
+        column 2 to 4 <br />
+        row 9
+      </div>
+      <div class="box box8">
+        box8 <br />
+        column 4 <br />
+        row 9
+      </div>
+    </div>
+  </body>
+</html>

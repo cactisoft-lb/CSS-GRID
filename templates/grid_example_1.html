@@ -1,0 +1,68 @@
+<!-- basic file -->
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Grid</title>
+    <style>
+      .wrapper {
+        display: grid;
+        /* now we have to define the width of our columns */
+        /* grid-template-columns: 70% 30%; splitting our wrapper into 2 columns  */
+        grid-template-columns: 40% 30% 30%;
+
+        /* to create gaps between columns */
+        grid-column-gap: 1em;
+
+        /* to create gaps between rows */
+        grid-row-gap: 1em;
+
+        /* to create gaps between columns and rows use the shortCut */
+        grid-gap: 2em;
+      }
+      .wrapper > div {
+        background-color: #e6e6e6;
+        padding: 1em;
+      }
+      .wrapper > div:nth-child(odd) {
+        background-color: #a6a6a6;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum,
+        laborum. Officia provident quaerat, numquam minus facilis cumque et
+        omnis fugit? Voluptatum possimus exercitationem sunt reprehenderit
+        laboriosam voluptates ratione quo libero! Doloremque nisi maiores,
+        repellendus corporis eveniet fugiat minus accusamus magni! Porro
+        sapiente fugit est delectus modi quas qui rem blanditiis.
+      </div>
+
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit,
+        adipisci. Dolor quam eaque dolorum autem dolores perferendis quasi quae
+        in? Et voluptatibus animi eveniet, optio maiores cupiditate labore quo
+        iure.
+      </div>
+      <div>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum,
+        laborum. Officia provident quaerat, numquam minus facilis cumque et
+        omnis fugit? Voluptatum possimus exercitationem sunt reprehenderit
+        laboriosam voluptates ratione quo libero! Doloremque nisi maiores,
+        repellendus corporis eveniet fugiat minus accusamus magni! Porro
+        sapiente fugit est delectus modi quas qui rem blanditiis.
+      </div>
+
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit,
+        adipisci. Dolor quam eaque dolorum autem dolores perferendis quasi quae
+        in? Et voluptatibus animi eveniet, optio maiores cupiditate labore quo
+        iure.
+      </div>
+    </div>
+  </body>
+</html>
